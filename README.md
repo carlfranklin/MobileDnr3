@@ -4,7 +4,7 @@
 
 See more projects at https://github.com/carlfranklin/DotNetShow
 
-Watch the video at 
+Watch the video at https://youtu.be/bOiw45wXbrQ
 
 All episodes are listed at https://thedotnetshow.com
 
@@ -830,6 +830,13 @@ public ICommand LoadMoreShows
         return loadMoreShows;
     }
 }
+```
+
+Before we can run, we need to change the `HomePageViewModel` constructor code to call `GetNextBatchOfShows()` instead of `LoadAllShows()`:
+
+```c#
+var t = Task.Run(() => GetNextBatchOfShows());
+t.Wait();
 ```
 
 Now, run the app.
