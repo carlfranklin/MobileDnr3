@@ -55,8 +55,7 @@
                 </dxcv:DXCollectionView.Margin>
             </dxcv:DXCollectionView>
             <Button Text="Load More Shows"
-                    Command="{Binding LoadMoreShows,
-                    Source={RelativeSource AncestorType={x:Type viewmodels:HomePageViewModel}}}" />
+                    Command="{Binding LoadMoreShows}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
