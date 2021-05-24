@@ -811,8 +811,7 @@ To *HomePage.xaml*, add the following button at the bottom of the main `<StackLa
 
 ```xaml
 <Button Text="Load More Shows"
-        Command="{Binding LoadMoreShows,
-                 Source={RelativeSource AncestorType={x:Type viewmodels:HomePageViewModel}}}" />
+        Command="{Binding LoadMoreShows}" />
 ```
 
 Add the following command to *HomePageViewModel.cs* :
