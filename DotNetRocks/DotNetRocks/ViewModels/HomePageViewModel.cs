@@ -65,6 +65,12 @@ namespace DotNetRocks.ViewModels
             var nextBatch = await ApiService.GetByShowNumbers(request);
             if (nextBatch == null || nextBatch.Count == 0) return;
 
+            // Get the show details - Added 6/23
+            foreach (var show in nextBatch)
+            {
+                show.ShowDetails = await ApiService.GetShowDetails(show.ShowNumber);
+            }
+
             AllShows.AddRange(nextBatch);
             LastShowNumber = nextBatch.Last<Show>().ShowNumber;
         }
