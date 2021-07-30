@@ -25,6 +25,7 @@ namespace DotNetRocks.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             CrossMediaManager.Current.Init();
+            DevExpress.XamarinForms.CollectionView.iOS.Initializer.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

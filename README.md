@@ -199,9 +199,20 @@ public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 {
     global::Xamarin.Forms.Forms.Init();
     CrossMediaManager.Current.Init();
+    DevExpress.XamarinForms.CollectionView.iOS.Initializer.Init();
     LoadApplication(new App());
+    return base.FinishedLaunching(app, options);
+}
+```
 
-    return base.Fi~nishedLaunching(app, options);
+Update the constructor in *App.xaml.cs* to initialize the DevExpress code:
+
+```c#
+public App()
+{
+    DevExpress.XamarinForms.CollectionView.Initializer.Init();
+    InitializeComponent();
+    MainPage = new MainPage();
 }
 ```
 
@@ -638,7 +649,7 @@ Replace *HomePage.xaml* with the following:
              x:Class="DotNetRocks.Views.HomePage"
              xmlns:local="clr-namespace:DotNetRocks"
              xmlns:viewmodels="clr-namespace:DotNetRocks.ViewModels"
-             xmlns:dxcv="http://schemas.devexpress.com/xamarin/2014/forms/collectionview"
+             xmlns:dxcv="clr-namespace:DevExpress.XamarinForms.CollectionView;assembly=DevExpress.XamarinForms.CollectionView"
              >
     
     <ContentPage.BindingContext>
